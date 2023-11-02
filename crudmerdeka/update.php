@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Update Makanan</title>
-    <!-- Sisipkan file Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -10,25 +9,20 @@
         <h1>Update Makanan</h1>
 
         <?php
-        // Periksa apakah parameter ID telah dikirimkan melalui URL
         if (isset($_GET['id'])) {
             $makananID = $_GET['id'];
 
-            // Konfigurasi koneksi database
-            $host = "localhost"; // Ganti dengan host MySQL Anda
-            $username = "root"; // Ganti dengan username MySQL Anda
-            $password = ""; // Ganti dengan password MySQL Anda
-            $database = "makanan"; // Ganti dengan nama database Anda
+            $host = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "makanan";
 
-            // Membuat koneksi ke database
             $koneksi = mysqli_connect($host, $username, $password, $database);
 
-            // Periksa koneksi
             if (!$koneksi) {
                 die("Koneksi database gagal: " . mysqli_connect_error());
             }
 
-            // Query untuk mengambil data makanan berdasarkan ID
             $query = "SELECT ID, NamaMakanan, Deskripsi, Harga
                       FROM Makanan
                       WHERE ID = $makananID";
@@ -67,11 +61,9 @@
         }
         ?>
 
-        <!-- Sisipkan tombol kembali ke halaman index.php -->
         <a href="index.php" class="btn btn-secondary">Kembali</a>
     </div>
 
-    <!-- Sisipkan file Bootstrap JavaScript (opsional, hanya jika Anda membutuhkan JavaScript) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

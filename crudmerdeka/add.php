@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Tambah Makanan</title>
-    <!-- Sisipkan file Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -26,18 +25,13 @@
 
         <?php
         if (isset($_POST['submit'])) {
-            // Tangani penambahan data ke database di sini
             $namaMakanan = $_POST['namaMakanan'];
             $deskripsi = $_POST['deskripsi'];
             $harga = $_POST['harga'];
-            // $kategori = $_POST['kategori']; // Hapus baris ini jika Anda tidak menggunakan kategori
-
-            // Lakukan koneksi ke database dan tambah data
-            // Misalnya, dengan mengirimkan query SQL INSERT
-            $host = "localhost"; // Ganti dengan host MySQL Anda
-            $username = "root"; // Ganti dengan username MySQL Anda
-            $password = ""; // Ganti dengan password MySQL Anda
-            $database = "makanan"; // Ganti dengan nama database Anda
+            $host = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "makanan";
 
             $koneksi = mysqli_connect($host, $username, $password, $database);
 
@@ -58,11 +52,9 @@
         }
         ?>
 
-        <!-- Sisipkan tombol kembali ke halaman index.php -->
         <a href="index.php" class="btn btn-secondary">Kembali</a>
     </div>
 
-    <!-- Sisipkan file Bootstrap JavaScript (opsional, hanya jika Anda membutuhkan JavaScript) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
